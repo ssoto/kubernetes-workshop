@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: express-example
+  labels:
+    app: hello-world
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      volumes:
+        - name: helloworld
+          gitRepo:
+            repository: "https://github.com/j-fuentes/express-hello-world"
+            revision: "030702c7be732c69231b00ae04b85c60eeb795b6"
+      containers:
+        - name: express
+          image: bitnami/node:5.2.0-0
+          command:
+            - sh
+            - -c
+            - 'cp -r /mnt/app/express-hello-world/* /app/ && npm install && npm start'
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - mountPath: /mnt/app
+              name: helloworld
+        - name: nginx
+          image: bitnami/nginx:1.9.10-0-r01
+          command:
+            - sh
+            - -c
+            - 'ln -s /mnt/app/express-hello-world /bitnami/express-hello-world && mkdir -p /bitnami/nginx/conf/vhosts && cp /mnt/app/express-hello-world/extra/vhost.conf /opt/bitnami/nginx/conf.defaults/bitnami/bitnami.conf && /entrypoint.sh'
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /mnt/app
+              name: helloworld

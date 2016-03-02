@@ -1,36 +1,9 @@
 #!/bin/bash
 set -e
 
-REDMINE_SESSION_TOKEN=${REDMINE_SESSION_TOKEN:-}
-
-# lookup REDMINE_SESSION_TOKEN configuration in secrets volume
-if [[ -z ${REDMINE_SESSION_TOKEN} && -f /etc/redmine-secrets/redmine-session-token ]]; then
-  REDMINE_SESSION_TOKEN=$(cat /etc/redmine-secrets/redmine-session-token)
-fi
-
-if [[ -z ${REDMINE_SESSION_TOKEN} ]]; then
-  echo "ERROR: "
-  echo "  Please configure a secret session token."
-  echo "  Cannot continue. Aborting..."
-  exit 1
-fi
-
-# automatically fetch database parameters from bitnami/mariadb
 DATABASE_NAME=${DATABASE_NAME:-${MARIADB_ENV_MARIADB_DATABASE}}
 DATABASE_USER=${DATABASE_USER:-${MARIADB_ENV_MARIADB_USER}}
 DATABASE_PASSWORD=${DATABASE_PASSWORD:-${MARIADB_ENV_MARIADB_PASSWORD}}
-
-# lookup DATABASE_PASSWORD configuration in secrets volume
-if [[ -z ${DATABASE_PASSWORD} && -f /etc/redmine-secrets/database-password ]]; then
-  DATABASE_PASSWORD=$(cat /etc/redmine-secrets/database-password)
-fi
-
-if [[ -z ${DATABASE_NAME} || -z ${DATABASE_USER} ]]; then
-  echo "ERROR: "
-  echo "  Please configure the database connection."
-  echo "  Cannot continue without a database. Aborting..."
-  exit 1
-fi
 
 # configure redmine database connection settings
 cat > config/database.yml <<EOF

@@ -17,26 +17,22 @@ spec:
         - name: redmine
           image: gcr.io/kubernetes-ws-0/redmine-basic
           env:
+            - name: REDMINE_SESSION_TOKEN
+              value: SUPERLONGANDSECRETSESSIONTOKENFORTHISAPP
             - name: DATABASE_HOST
               value: mariadb
             - name: DATABASE_NAME
               value: redmine_production
             - name: DATABASE_USER
               value: redmine
+            - name: DATABASE_PASSWORD
+              value: secretpassword
           ports:
             - containerPort: 3000
               protocol: TCP
-          volumeMounts:
-            - name: redmine-secrets
-              mountPath: /etc/redmine-secrets
-              readOnly: true
           livenessProbe:
             httpGet:
               path: /
               port: 3000
             initialDelaySeconds: 60
             timeoutSeconds: 1
-      volumes:
-        - name: redmine-secrets
-          secret:
-            secretName: redmine-secrets

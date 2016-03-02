@@ -9,7 +9,7 @@ spec:
     - name: helloworld
       gitRepo:
         repository: "https://github.com/j-fuentes/express-hello-world"
-        revision: "650e4bc83e13cfec323cc52802d5485bee603827"
+        revision: "030702c7be732c69231b00ae04b85c60eeb795b6"
   containers:
     - name: express
       image: bitnami/node:5.2.0-0

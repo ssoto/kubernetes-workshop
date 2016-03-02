@@ -5,23 +5,12 @@ metadata:
   labels:
     app: hello-world
 spec:
-  volumes:
-    - name: helloworld
-      gitRepo:
-        repository: "https://github.com/j-fuentes/express-hello-world"
-        revision: "030702c7be732c69231b00ae04b85c60eeb795b6"
   containers:
     - name: express
       image: gcr.io/kubernetes-ws-0/hello-world-node
       ports:
         - containerPort: 3000
-      volumeMounts:
-        - mountPath: /mnt/app
-          name: helloworld
     - name: nginx
       image: gcr.io/kubernetes-ws-0/hello-world-nginx
       ports:
         - containerPort: 80
-      volumeMounts:
-        - mountPath: /mnt/app
-          name: helloworld

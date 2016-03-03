@@ -64,7 +64,7 @@ It should return some information about the cluster.
 
 This schema illustrates what we want to deploy:
 
-<div style="text-align:center"><img src ="./resources/schema.png" /></div>
+<img src ="./resources/schema.png" align="middle"/>
 
 ### Pod
 

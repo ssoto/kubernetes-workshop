@@ -64,7 +64,7 @@ It should return some information about the cluster.
 
 This schema illustrates what we want to deploy:
 
-<img src ="./resources/schema.png" align="middle"/>
+![schema](./resources/schema.png)
 
 ### Pod
 
@@ -126,18 +126,6 @@ Open your browser and go to `http://<service external IP>`. You should be able t
 
 Take a look at the logs.
 
-## Extra: Add another container to the pod
-
-Until now, _express_ have to serve both static (images and css) and dynamic content. The application will perform better if we serve static files with another server like [nginx](http://nginx.org/).
-
-<img src ="./resources/schema.png" align="middle"/>
-
-To do that, add a __nginx__ container to the pod and do whatever changes are necessary to make that work as expected.
-
-We have already an image for that container prepared at _gcr.io/kubernetes-ws-0/hello-world-nginx_.
-
-NOTE: that nginx image has the [static files](../0_stacksmith/public) inside and the [proper configuration](../0_stacksmith/extra) for the project. You don't need it, but [here you have the Dockerfile](../0_stacksmith/Dockerfile.static).
-
 ## Shut down the application
 
 ### Delete the service
@@ -147,3 +135,20 @@ NOTE: that nginx image has the [static files](../0_stacksmith/public) inside and
 ### Delete the pod
 
 `kubectl delete pod first-pod` or `kubectl delete -f pod.yml`
+
+
+## Extra: Add another container to the pod
+
+Until now, _express_ have to serve both static (images and css) and dynamic content. The application will perform better if we serve static files with another server like [nginx](http://nginx.org/).
+
+![schema2](./resources/schema2.png)
+
+To do that, add a __nginx__ container to the pod and do whatever changes are necessary to make that work as expected.
+
+We have already an image for that container prepared at _gcr.io/kubernetes-ws-0/hello-world-nginx_.
+
+Try to figure out what to change on this example to implement it and also try to do that by yourself.
+
+NOTE: that nginx image has the [static files](../0_stacksmith/public) inside and the [proper configuration](../0_stacksmith/extra) for the project. You don't need it, but [here you have the Dockerfile](https://github.com/bitnami/kubernetes-workshop/blob/you-are-not-here/hands-on/0_stacksmith/Dockerfile.statics).
+
+If you get stuck, here you have the solution: [pod](https://github.com/bitnami/kubernetes-workshop/blob/you-are-not-here/hands-on/1_first_deploy/pod_2.yml), [service](https://github.com/bitnami/kubernetes-workshop/blob/you-are-not-here/hands-on/1_first_deploy/service_2.yml).

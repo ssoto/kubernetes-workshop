@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: first-service
+  labels:
+    app: express-gallery
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    protocol: TCP
+    name: http-nginx
+  selector:
+    app: express-gallery

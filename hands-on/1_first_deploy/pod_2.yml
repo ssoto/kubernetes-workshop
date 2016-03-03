@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: first-pod
+  labels:
+    app: express-gallery
+spec:
+  containers:
+    - name: express
+      image: gcr.io/kubernetes-ws-0/hello-world-node
+    - name: nginx
+      image: gcr.io/kubernetes-ws-0/hello-world-nginx
+      ports:
+        - containerPort: 80

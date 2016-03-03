@@ -1,4 +1,4 @@
-# Deploy our first application on Kubernetes
+# Deploying our first application on Kubernetes
 
 ## Requirements
 

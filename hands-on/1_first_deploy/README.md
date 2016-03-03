@@ -159,8 +159,8 @@ __QUESTION__: How correct do you think this approach is? What would you change?
 
 - [pod](https://github.com/bitnami/kubernetes-workshop/blob/you-are-not-here/hands-on/1_first_deploy/pod_2.yml)
 
-`wget https://raw.githubusercontent.com/bitnami/kubernetes-workshop/you-are-not-here/hands-on/1_first_deploy/pod_2.yml`
+```wget https://raw.githubusercontent.com/bitnami/kubernetes-workshop/you-are-not-here/hands-on/1_first_deploy/pod_2.yml```
 
 - [service](https://github.com/bitnami/kubernetes-workshop/blob/you-are-not-here/hands-on/1_first_deploy/service_2.yml)
 
-`wget https://raw.githubusercontent.com/bitnami/kubernetes-workshop/you-are-not-here/hands-on/1_first_deploy/service_2.yml`
+```wget https://raw.githubusercontent.com/bitnami/kubernetes-workshop/you-are-not-here/hands-on/1_first_deploy/service_2.yml```

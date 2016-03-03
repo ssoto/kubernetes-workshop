@@ -154,3 +154,5 @@ __HINT__: You just need to change a few lines in `service.yml` and `pod.yml`.
 __NOTE__: that nginx image has the [static files](../0_stacksmith/public) inside and the [proper configuration](../0_stacksmith/extra/vhost.conf) for the project. You don't need it, but [here you have the Dockerfile](https://github.com/bitnami/kubernetes-workshop/blob/you-are-not-here/hands-on/0_stacksmith/Dockerfile.statics).
 
 If you get stuck, here you have the solution: [pod](https://github.com/bitnami/kubernetes-workshop/blob/you-are-not-here/hands-on/1_first_deploy/pod_2.yml), [service](https://github.com/bitnami/kubernetes-workshop/blob/you-are-not-here/hands-on/1_first_deploy/service_2.yml).
+
+__QUESTION__: How correct do you think this approach is? What would you change?

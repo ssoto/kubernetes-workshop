@@ -20,6 +20,10 @@ Also, since we want Kubernetes to control failures, we are creating [replication
 
 We are also using two [services](http://kubernetes.io/v1.1/docs/user-guide/services.html), one for the web part (which is public) and another one for the database (which is private).
 
+### A volume
+
+We need a [volume](http://kubernetes.io/v1.0/docs/user-guide/volumes.html) to persist data in the database. We are going to use a _gcePersistentDisk_ as support for that volume.
+
 ## Complete the template
 
 In this folder you have templates for the redmine replication controller (`redmine-rc.yml`)[./redmine-rc.yml], mariadb replication controller (`mariadb-rc.yml`)[./mariadb-rc.yml], redmine web service (`web-service.yml`)[./web-service.yml] and db service (`db-service.yml`)[./db-service.yml]. Those templates are not complete, they have some blanks parameter to fill (`<FILL_THIS>`).

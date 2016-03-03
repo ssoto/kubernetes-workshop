@@ -149,6 +149,8 @@ We have already an image for that container prepared at _gcr.io/kubernetes-ws-0/
 
 Try to figure out what to change on this example to implement it and also try to do that by yourself.
 
-NOTE: that nginx image has the [static files](../0_stacksmith/public) inside and the [proper configuration](../0_stacksmith/extra/vhost.conf) for the project. You don't need it, but [here you have the Dockerfile](https://github.com/bitnami/kubernetes-workshop/blob/you-are-not-here/hands-on/0_stacksmith/Dockerfile.statics).
+__HINT__: You just need to change a few lines in `service.yml` and `pod.yml`.
+
+__NOTE__: that nginx image has the [static files](../0_stacksmith/public) inside and the [proper configuration](../0_stacksmith/extra/vhost.conf) for the project. You don't need it, but [here you have the Dockerfile](https://github.com/bitnami/kubernetes-workshop/blob/you-are-not-here/hands-on/0_stacksmith/Dockerfile.statics).
 
 If you get stuck, here you have the solution: [pod](https://github.com/bitnami/kubernetes-workshop/blob/you-are-not-here/hands-on/1_first_deploy/pod_2.yml), [service](https://github.com/bitnami/kubernetes-workshop/blob/you-are-not-here/hands-on/1_first_deploy/service_2.yml).

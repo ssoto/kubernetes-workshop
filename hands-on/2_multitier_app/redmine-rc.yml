@@ -20,7 +20,7 @@ spec:
             - name: REDMINE_SESSION_TOKEN
               value: SUPERLONGANDSECRETSESSIONTOKENFORTHISAPP
             - name: DATABASE_HOST
-              value: db
+              value: <FILL_THIS>
             - name: DATABASE_NAME
               value: redmine_production
             - name: DATABASE_USER

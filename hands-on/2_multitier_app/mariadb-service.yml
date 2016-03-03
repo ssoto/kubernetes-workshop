@@ -6,8 +6,8 @@ metadata:
     app: redmine
 spec:
   ports:
-    - port: 3306
-      targetPort: 3306
+    - port: <FILL_THIS>
+      targetPort: <FILL_THIS>
       protocol: TCP
   selector:
-    name: mariadb
+    name: <FILL_THIS>

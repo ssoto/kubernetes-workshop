@@ -5,10 +5,10 @@ metadata:
   labels:
     app: redmine
 spec:
-  type: LoadBalancer
+  type: <FILL_THIS>
   ports:
     - port: 80
-      targetPort: 3000
+      targetPort: <FILL_THIS>
       protocol: TCP
   selector:
-    name: redmine
+    name: <FILL_THIS>

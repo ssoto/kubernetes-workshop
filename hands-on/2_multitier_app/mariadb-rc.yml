@@ -29,15 +29,15 @@ spec:
             - containerPort: 3306
               name: mariadb
           volumeMounts:
-            - name: mariadb-persistent-storage
+            - name: <FILL_THIS>
               mountPath: /bitnami/mariadb/data
           livenessProbe:
             tcpSocket:
-              port: 3306
+              port: <FILL_THIS>
             initialDelaySeconds: 30
             timeoutSeconds: 1
       volumes:
         - name: mariadb-persistent-storage
           gcePersistentDisk:
-            pdName: mariadb-disk
+            pdName: <FILL_THIS>
             fsType: ext4

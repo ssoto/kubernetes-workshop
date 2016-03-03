@@ -1,0 +1,31 @@
+## BUILDING
+##   (from project root directory)
+##   $ docker build -t nginx-1-9-10-0-on-ubuntu .
+##
+## RUNNING
+##   $ docker run -p 80:80 nginx-1-9-10-0-on-ubuntu
+##
+## CONNECTING
+##   Lookup the IP of your active docker host using:
+##     $ docker-machine ip $(docker-machine active)
+##   Connect to the container at DOCKER_IP:80
+##     replacing DOCKER_IP for the IP of your active docker host
+##
+## NOTES
+##   This is a prebuilt version of nginx.
+##   For more information and documentation visit:
+##     https://github.com/bitnami/bitnami-docker-nginx
+
+FROM gcr.io/bitnami-containers/nginx:1.9.10-0-r01
+
+LABEL com.bitnami.stacksmith.id="UbRyn1E" \
+      com.bitnami.stacksmith.name="nginx 1.9.10-0 on Ubuntu"
+
+ENV STACKSMITH_STACK_ID="UbRyn1E" \
+    STACKSMITH_STACK_NAME="nginx 1.9.10-0 on Ubuntu" \
+    STACKSMITH_STACK_PRIVATE="1" \
+    BITNAMI_CONTAINER_ORIGIN="stacksmith"
+
+COPY public /bitnami/express-hello-world/public
+COPY extra/vhost.conf /opt/bitnami/nginx/conf.defaults/bitnami/bitnami.conf
+Status API Training Shop Blog About Pricing

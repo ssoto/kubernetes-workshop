@@ -70,7 +70,7 @@ This schema illustrates what we want to deploy:
 
 `pod.yml` describes the (pod)[http://kubernetes.io/v1.1/docs/user-guide/pods.html] we are about to create.
 
-Inside the pod we have just a container, which will be created from the image we have built on the [previous exercise](../0_stacksmith/). The image has been uploaded to the project registry, so anyone can download it.
+Inside the pod we have just a container, which will be created from the image we have built on the [previous exercise](../0_stacksmith/). The image has been uploaded to the project registry (_gcr.io/kubernetes-ws-0/hello-world-node_), so anyone can download it.
 
 ### Service
 
@@ -125,6 +125,18 @@ Use `kubectl get service` to get the external IP address where our service is li
 Open your browser and go to `http://<service external IP>`. You should be able to see the web for our application.
 
 Take a look at the logs.
+
+## Extra: Add another container to the pod
+
+Until now, _express_ have to serve both static (images and css) and dynamic content. The application will perform better if we serve static files with another server like [nginx](http://nginx.org/).
+
+<img src ="./resources/schema.png" align="middle"/>
+
+To do that, add a __nginx__ container to the pod and do whatever changes are necessary to make that work as expected.
+
+We have already an image for that container prepared at _gcr.io/kubernetes-ws-0/hello-world-nginx_.
+
+NOTE: that nginx image has the [static files](../0_stacksmith/public) inside and the [proper configuration](../0_stacksmith/extra) for the project. You don't need it, but [here you have the Dockerfile](../0_stacksmith/Dockerfile.static).
 
 ## Shut down the application
 

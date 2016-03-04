@@ -4,6 +4,12 @@
 
 The same than [before](../1_first_deploy/README.md#requirements).
 
+Create a disk:
+
+```
+gcloud compute disks create <name> --SIZE-100
+```
+
 ## Description
 
 In this exercise, we are going deploy a more complex application, [redmine](http://www.redmine.org/) with [mariaDB](https://mariadb.org/) as database.

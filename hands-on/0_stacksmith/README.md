@@ -22,4 +22,4 @@ You can follow these steps:
 
 - Build the image: `docker build -t my-express-app .`
 
-- Run your application: `docker run -ti --name my-container my-express-app`
+- Run your application: `docker run -ti --rm --name my-container -p 3000:3000 my-express-app`

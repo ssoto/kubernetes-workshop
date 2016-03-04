@@ -4,5 +4,10 @@ block content
   h1= title
   h2= category
   h3= item
-  p: #[a(href=`/gallery/${category}\/${(item <= 1) ? max : item - 1}`) Previous] #[ - ] #[a(href=`/gallery/${category}\/${(item >= max) ? 1 : item + 1}`) Next]
+  p
+    a(href=`/gallery/${category}\/${(item <= 1) ? max : item - 1}`)
+      | Previous
+    |  - 
+    a(href=`/gallery/${category}\/${(item >= max) ? 1 : item + 1}`)
+      | Next
   img(src=`/images/${category}${item}.png`)

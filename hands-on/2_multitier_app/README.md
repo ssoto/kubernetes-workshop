@@ -32,7 +32,7 @@ We need a [volume](http://kubernetes.io/v1.0/docs/user-guide/volumes.html) to pe
 
 ## Complete the template
 
-In this folder you have templates for the redmine replication controller (`redmine-rc.yml`)[./redmine-rc.yml], mariadb replication controller (`mariadb-rc.yml`)[./mariadb-rc.yml], redmine web service (`web-service.yml`)[./web-service.yml] and db service (`db-service.yml`)[./db-service.yml]. Those templates are not complete, they have some blanks parameter to fill (`<FILL_THIS>`).
+In this folder you have templates for the redmine replication controller [`redmine-rc.yml`](./redmine-rc.yml), mariadb replication controller [`mariadb-rc.yml`](./mariadb-rc.yml), redmine web service [`web-service.yml`](./web-service.yml) and db service [`db-service.yml`](./db-service.yml). Those templates are not complete, they have some blanks parameter to fill (`<FILL_THIS>`).
 
 Try to fill the remaining parameters (`<FILL_THIS>`) by yourself and make the application work.
 

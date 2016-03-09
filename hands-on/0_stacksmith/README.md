@@ -14,7 +14,7 @@ Try to create a Docker image to run it.
 
 You can follow these steps:
 
-- Go to [Stacksmith](stacksmith.bitnami.com) and log in.
+- Go to [Stacksmith](https://stacksmith.bitnami.com/) and log in.
 
 - Create a new stack with __node__ + __express__.
 
